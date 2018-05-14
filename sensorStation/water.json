@@ -1,0 +1,59 @@
+[
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-07 08:00:00",
+        "value1":"1.63",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-08 08:00:00",
+        "value1":"0.82",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-09 08:00:00",
+        "value1":"1.72",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-10 08:00:00",
+        "value1":"1.45",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-11 08:00:00",
+        "value1":"1.94",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-12 08:00:00",
+        "value1":"1.95",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-13 08:00:00",
+        "value1":"1.27",
+        "key1":"new"
+},
+{
+        "sensor_id":"1",
+        "sensor_type":"Water Temperature",
+        "timestamp1":"2018-05-14 08:00:00",
+        "value1":"1.74",
+        "key1":"new"
+}
+]
+

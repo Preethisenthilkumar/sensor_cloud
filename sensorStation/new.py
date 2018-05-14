@@ -1,0 +1,47 @@
+import json
+import requests
+import time
+
+#sesnsor station 1
+loaded_json1 = json.loads(open('/Users/nidhi/Desktop/281project/sensorStation/water.json').read())
+loaded_json2 = json.loads(open('/Users/nidhi/Desktop/281project/sensorStation/transducer.json').read())
+loaded_json3 = json.loads(open('/Users/nidhi/Desktop/281project/sensorStation/turbidity.json').read())
+loaded_json4 = json.loads(open('/Users/nidhi/Desktop/281project/sensorStation/waveheigth.json').read())
+loaded_json5 = json.loads(open('/Users/nidhi/Desktop/281project/sensorStation/waveperiod.json').read())
+while True:
+	for x ,y,z,a,b in zip(loaded_json1 ,loaded_json2 ,loaded_json3 ,loaded_json4 ,loaded_json5 ):
+		time.sleep(10)
+		print("connected to Sensor Control Station")
+		print("Sensor 1 sending data : ")
+		print(x)
+		r = requests.post('http://localhost:8888/sensor_cloud/nativerest/api/Sensor_repo', data =json.dumps(x))
+		print(r)
+		print('')
+		print('')
+		print("Sensor 2 sending data : ")
+		print(y)
+		r = requests.post('http://localhost:8888/sensor_cloud/nativerest/api/Sensor_repo', data =json.dumps(y))
+		print(r)
+		print('')
+		print('')
+		print("Sensor 3 sending data : ")
+		print(z)
+		r = requests.post('http://localhost:8888/sensor_cloud/nativerest/api/Sensor_repo', data =json.dumps(z))
+		print(r)
+		print('')
+		print('')
+		print("Sensor 4 sending data : ")
+		print(a)
+		r = requests.post('http://localhost:8888/sensor_cloud/nativerest/api/Sensor_repo', data =json.dumps(a))
+		print(r)
+		print('')
+		print('')
+		print("Sensor 5 sending data : ")
+		print(b)
+		r = requests.post('http://localhost:8888/sensor_cloud/nativerest/api/Sensor_repo', data =json.dumps(b))
+		print(r)
+		print('')
+		print('')
+	#print("%s: %d" % (x, loaded_json[x]))
+	#r = requests.post('http://localhost:8888/nativerest/api/Sensor', data =json.dumps(x))
+	#

@@ -1,0 +1,59 @@
+[
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-07 08:00:00",
+        "value1":"3",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-08 08:00:00",
+        "value1":"6",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-09 08:00:00",
+        "value1":"4",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-10 08:00:00",
+        "value1":"7",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-11 08:00:00",
+        "value1":"4",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-12 08:00:00",
+        "value1":"7",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-13 08:00:00",
+        "value1":"5",
+        "key1":"new"
+},
+{
+        "sensor_id":"5",
+        "sensor_type":"Wave Period",
+        "timestamp1":"2018-05-14 08:00:00",
+        "value1":"6",
+        "key1":"new"
+}
+]
+
