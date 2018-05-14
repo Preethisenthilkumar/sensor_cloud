@@ -62,34 +62,37 @@ function deliver_response($response){
 // Set default HTTP response of 'Not Found'
 $response['status'] = 404;
 $response['data'] = NULL;
-echo "here";
+echo "here 999 <br>", "\n";
 
 $url_array = explode('/', $_SERVER['REQUEST_URI']);
+echo $_SERVER['REQUEST_URI'], "\n"; 
+echo json_encode($url_array), "\n";
 array_shift($url_array); // remove first value as it's empty
 // remove 2nd and 3rd array, because it's directory
 array_shift($url_array); // 2nd = 'NativeREST'
+array_shift($url_array); // 2nd = 'NativeREST'
 array_shift($url_array); // 3rd = 'api'
-echo $url_array;
-#echo $url_array[0];
-#echo $_SERVER['REQUEST_URI']; 
+echo json_encode($url_array), "\n";
+echo $_SERVER['REQUEST_URI'], "\n"; 
 
 // get the action (resource, collection)
 $action = $url_array[0];
+echo "action ",  $action, "$$", "\n" ;
 // get the method
 $method = $_SERVER['REQUEST_METHOD'];
 
 require_once("Sensor_repo.php");
 if( strcasecmp($action,'Sensor_repo') == 0){
-	#echo "here 11";
+	echo "here 11";
 	$Sensor_repo = new Sensor_repo();
 	if($method=='GET'){
-		#echo "here 1";
+		echo "here 1";
 		if(!isset($url_array[1])){ // if parameter id not exist
 			// METHOD : GET api/Sensor
 			$data=$Sensor_repo->getAllSensor();
 			$response['status'] = 200;
 			$response['data'] = $data;
-			#echo "here 2";
+			echo "here 2";
 		}else{ // if parameter id exist
 			// METHOD : GET api/Sensor/:id
 			$id=$url_array[1];
@@ -101,7 +104,7 @@ if( strcasecmp($action,'Sensor_repo') == 0){
 				$response['status'] = 200;
 				$response['data'] = $data;	
 			}
-			#echo "here 3";
+			echo "here 3";
 		}
 	}
 	elseif($method=='POST'){
@@ -111,11 +114,11 @@ if( strcasecmp($action,'Sensor_repo') == 0){
 		$post = json_decode($json); // decode to object
 
 		// check input completeness
-		if($post->sensor_id==""  || $post->sensor_type==""  || $post->value=="" || $post->timestamp==""){
+		if($post->sensor_id==""  || $post->sensor_type==""  || $post->value1=="" || $post->timestamp1=="" || $post->key1==""){
 			$response['status'] = 400;
 			$response['data'] = array('error' => 'Data is incomplete');
 		}else{
-			$status = $Sensor_repo->insertSensor($post->sensor_id,$post->sensor_type, $post->value, $post->timestamp);
+			$status = $Sensor_repo->insertSensor($post->sensor_id,$post->sensor_type, $post->value1, $post->timestamp1 , $post->key1);
 			if($status==1){
 				$response['status'] = 201;
 				$response['data'] = array('success' => 'Data successfully saved');
@@ -140,11 +143,11 @@ if( strcasecmp($action,'Sensor_repo') == 0){
 				$post = json_decode($json); // decode to object
 
 				// check input completeness
-				if($post->sensor_id=="" ||$post->sensor_type=="" || $post->value=="" || $post->timestamp==""){
+				if($post->sensor_id=="" ||$post->sensor_type=="" || $post->value1=="" || $post->timestamp1=="" || $post->key1==""){
 					$response['status'] = 400;
 					$response['data'] = array('error' => 'incomplete data');
 				}else{
-					$status = $Sensor_repo->updateSensor($id,$post->sensor_id, $post->sensor_type, $post->value, $post->timestamp);
+					$status = $Sensor_repo->updateSensor($id,$post->sensor_id, $post->sensor_type, $post->value1, $post->timestamp1, $post->key1);
 					if($status==1){
 						$response['status'] = 200;
 						$response['data'] = array('success' => 'Data successfully edited');
